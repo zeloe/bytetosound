@@ -13,14 +13,13 @@
 #include <cstdint>
 #include <vector>
 #include "WaveFile.h"
-char data;
 // two channels = 2 * sampling rate = 1 second
 int seconds = 44100 * 10;
 int main(int argc, const char * argv[]) {
 
     // path to file to read
     
-    std::string in_name = "edit me"; // path to raw  data
+    std::string in_name = ""; // raw  data
     std::ifstream in(in_name, std::ifstream::binary);
     
     uint32_t fsize = in.tellg();
@@ -37,12 +36,10 @@ int main(int argc, const char * argv[]) {
     in.read(buffer, seconds);
    
     // path to file output
-    std::ofstream out("edit me", std::ios::binary); // write raw data as wave to disk
+    std::ofstream out("", std::ios::binary); // write raw data
     out.write(reinterpret_cast<const char *>(&wav), sizeof(wav));
     for (int i = 0; i < seconds; ++i) {
-        int chunk = buffer[i];
-        char charchunk = chunk;
-        out.write(reinterpret_cast<char *>(&charchunk), sizeof(int16_t));
+        out.write(reinterpret_cast<char *>(&buffer[i]), sizeof(int16_t));
       }
     return 0;
 }
