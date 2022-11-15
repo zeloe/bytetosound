@@ -14,15 +14,13 @@
 #include <vector>
 #include "WaveFile.h"
 char data;
-std::streampos fsize = 0;
-std::vector<int> output;
-std::vector<int> input;
 // two channels = 2 * sampling rate = 1 second
-int seconds = 44100 * 4;
+int seconds = 44100 * 10;
 int main(int argc, const char * argv[]) {
 
     // path to file to read
-    std::string in_name = "edit me"; // raw  data
+    
+    std::string in_name = "edit me"; // path to raw  data
     std::ifstream in(in_name, std::ifstream::binary);
     
     uint32_t fsize = in.tellg();
@@ -39,7 +37,7 @@ int main(int argc, const char * argv[]) {
     in.read(buffer, seconds);
    
     // path to file output
-    std::ofstream out("edit me", std::ios::binary); // write raw data
+    std::ofstream out("edit me", std::ios::binary); // write raw data as wave to disk
     out.write(reinterpret_cast<const char *>(&wav), sizeof(wav));
     for (int i = 0; i < seconds; ++i) {
         int chunk = buffer[i];
