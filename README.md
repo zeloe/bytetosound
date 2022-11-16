@@ -1,15 +1,17 @@
 # bytetosound
- Reads raw data and outputs it as a wave file
+ Reads raw data and outputs it as a wave file or image.
 ## How to use
-### edit this in main.cpp
-length of file 
-> int seconds = 44100 * 4;
 
-path to any file to read 
-> std::string in_name = "edit me"; // raw  data
+### edit in .cpp files path to input and output 
+Just edit empty strings.
 
-path to output
-> std::ofstream out("edit me", std::ios::binary); // write raw data
+## How to build
+> g++ -std=c++17 -o outputfile  input.cpp 
+
+Example
+
+>  g++ -std=c++17 -o wavefilecreator folder_to_wav.cpp
+
 
 
 
