@@ -17,7 +17,7 @@ int counter = 0;
 int main(int argc, const char * argv[]) {
 
     // path to file to read
-    const std::__fs::filesystem::path path {""};  //path to image
+    const std::__fs::filesystem::path path {"/Volumes/Backup/Glichart/colors"};  //path to image
     
     for (auto const &dir_entry : std::__fs::filesystem::recursive_directory_iterator{path})
     {
@@ -39,7 +39,7 @@ int main(int argc, const char * argv[]) {
         in.read(buffer, fsize);
         // path to file output
         
-        std::ofstream out("" + std::to_string(counter) + ".wav", std::ios::binary); //output path
+        std::ofstream out("/Volumes/Backup/Glichart/waves_2/" + std::to_string(counter) + ".wav", std::ios::binary); //output path
         counter += 1;
         // write wav data
     out.write(reinterpret_cast<const char *>(&wav), sizeof(wav));

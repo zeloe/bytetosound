@@ -22,7 +22,7 @@ typedef struct WAV_HEADER {
   uint32_t SamplesPerSec = 44100;   // Sampling Frequency in Hz
   uint32_t bytesPerSec = 44100 * 2; // bytes per second
   uint16_t blockAlign = 2;          // 2=16-bit mono, 4=16-bit stereo
-  uint16_t bitsPerSample = 32;      // Number of bits per sample Change this number max = 32
+  uint16_t bitsPerSample = 8;      // Number of bits per sample Change this number max = 32
   /* "data" sub-chunk */
   uint8_t Subchunk2ID[4] = {'d', 'a', 't', 'a'}; // "data"  string
   uint32_t Subchunk2Size;                        // Sampled data length
