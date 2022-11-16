@@ -1,9 +1,4 @@
-//
-//  main.cpp
-//  byte_to_wav
-//
 //  Created by Zeno  Loesch on 15/11/22.
-//
 
 #include <iostream>
 #include <iostream>
@@ -41,6 +36,8 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < seconds; ++i) {
         out.write(reinterpret_cast<char *>(&buffer[i]), sizeof(int16_t));
       }
+    in.close();
+    out.close();
     return 0;
 }
 
