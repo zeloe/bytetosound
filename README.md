@@ -12,7 +12,15 @@ Example
 
 >  g++ -std=c++17 -o wavefilecreator folder_to_wav.cpp
 
+## "Best results" for getting glitches in audio 
 
+<img width="511" alt="1" src="https://user-images.githubusercontent.com/54742442/202549477-edb661c8-b818-4548-8e01-14e6c0f45ec9.png">
+<img width="510" alt="2" src="https://user-images.githubusercontent.com/54742442/202549488-6dc3e371-bbd2-4203-93e7-24e401ff0b08.png">
+<img width="513" alt="3" src="https://user-images.githubusercontent.com/54742442/202549489-43f29493-aa3d-45c9-8584-371f1ecde228.png">
+
+
+You can set bit rate in Wavefile.h to 1 and it is more likley to get this kind of image. \
+Remember to put it like to 8 that your DAW can import it. 
 
 
 ## Wavefile encoding
