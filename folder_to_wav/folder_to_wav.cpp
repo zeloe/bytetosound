@@ -17,7 +17,8 @@ int counter = 0;
 int main(int argc, const char * argv[]) {
 
     // path to file to read
-    const std::__fs::filesystem::path path {"/Volumes/Backup/Glichart/colors"};  //path to image
+    const std::__fs::filesystem::path path {""};  //path to image
+   
     
     for (auto const &dir_entry : std::__fs::filesystem::recursive_directory_iterator{path})
     {
@@ -29,7 +30,7 @@ int main(int argc, const char * argv[]) {
         fsize = (uint32_t)in.tellg() - fsize;
         in.seekg(0, std::ios::beg);
 
-        printf("file size: %u\n", fsize); // length of file
+        //printf("file size: %u\n", fsize); // length of file
         wav_hdr wav;
         wav.ChunkSize = fsize + sizeof(wav_hdr) - 8;
         wav.Subchunk2Size = fsize + sizeof(wav_hdr) - 44;
@@ -38,16 +39,17 @@ int main(int argc, const char * argv[]) {
         
         in.read(buffer, fsize);
         // path to file output
-        
-        std::ofstream out("/Volumes/Backup/Glichart/waves_2/" + std::to_string(counter) + ".wav", std::ios::binary); //output path
+        std::ofstream out("" + std::to_string(counter) + ".wav", std::ios::binary); //output path
         counter += 1;
         // write wav data
     out.write(reinterpret_cast<const char *>(&wav), sizeof(wav));
     for (int i = 0; i < fsize; ++i) {
+       
         out.write(reinterpret_cast<char *>(& buffer[i]), sizeof(int16_t));
       }
         out.close();
         in.close();
+        free(buffer);
     }
     return 0;
 }

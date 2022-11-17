@@ -48,6 +48,8 @@ int main(int argc, const char * argv[]) {
       }
     out.close();
     in.close();
+    free(buffer);
+    free(intbuffer);
     return 0;
 }
 
