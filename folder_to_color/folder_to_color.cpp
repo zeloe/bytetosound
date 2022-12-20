@@ -21,11 +21,11 @@ int counter = 0;
 int main(int argc, const char * argv[]) {
 
     unsigned char r, g, b;
-    const std::filesystem::path path {""}; //input path
+    std::filesystem::path path {""}; //input path
     
     for (auto const &dir_entry : std::filesystem::recursive_directory_iterator{path})
     {
-        std::string path_string = dir_entry.path();
+        std::string path_string = dir_entry.path().string();
         std::ifstream in(path_string, std::ifstream::binary);
     
     uint32_t fsize = in.tellg();
