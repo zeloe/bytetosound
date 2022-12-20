@@ -17,10 +17,10 @@ int counter = 0;
 int main(int argc, const char * argv[]) {
 
     // path to file to read
-    const std::__fs::filesystem::path path {""};  //path to image
+    const std::filesystem::path path {""};  //path to image
    
     
-    for (auto const &dir_entry : std::__fs::filesystem::recursive_directory_iterator{path})
+    for (auto const &dir_entry : std::filesystem::recursive_directory_iterator{path})
     {
         std::string path_string = dir_entry.path();
         std::ifstream in(path_string, std::ifstream::binary);
