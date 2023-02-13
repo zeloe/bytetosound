@@ -15,7 +15,7 @@ Just edit empty strings.
 ## How to build other_folder_to_color
 >  g++ -std=c++17 -o image other_folder_to_color.cpp ../lodepng/lodepng.cpp
 
-##Example
+## Example
 
 >  g++ -std=c++17 -o wavefilecreator folder_to_wav.cpp
 
