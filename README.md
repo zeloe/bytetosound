@@ -5,13 +5,17 @@
 ### edit in .cpp files path to input and output 
 Just edit empty strings.
 
+## First
+> git submodule update --init --recursive
+
+
 ## How to build
 > g++ -std=c++17 -o outputfile  input.cpp 
 
 ## How to build other_folder_to_color
 >  g++ -std=c++17 -o image other_folder_to_color.cpp ../lodepng/lodepng.cpp
 
-Example
+##Example
 
 >  g++ -std=c++17 -o wavefilecreator folder_to_wav.cpp
 
