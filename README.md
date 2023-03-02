@@ -13,7 +13,8 @@ Just edit empty strings.
 > g++ -std=c++17 -o outputfile  input.cpp 
 
 ## How to build other_folder_to_color
->  g++ -std=c++17 -o image other_folder_to_color.cpp ../lodepng/lodepng.cpp
+>  g++ -std=c++17 -I../libs/lodepng -o image other_folder_to_color.cpp ../libs/lodepng/lodepng.cpp
+
 
 ## Example
 
