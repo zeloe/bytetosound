@@ -40,3 +40,7 @@ The code how to write a
 
 ## The image i used
 ![kandinsky](https://user-images.githubusercontent.com/54742442/201990514-70c5f03b-bdf3-43c7-b27b-dcebbffe8c26.jpg)
+
+## To hear how it sounds 
+[soundcloud](https://soundcloud.com/zeno-l-sch/databending-001) \
+ NOTE -> i used some reverbs find them on my github
