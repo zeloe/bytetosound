@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+
+project(ByteToSound LANGUAGES VERSION 0.0.1  CXX)
+
+# Set the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# IDEs:  Enable grouping of source files into folders in IDEs.
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+
+include(FetchContent)
+
+
+
+
+FetchContent_Declare(LODEPNG
+    GIT_REPOSITORY https://github.com/lvandeve/lodepng.git
+    GIT_TAG        master
+    GIT_SHALLOW    TRUE
+    GIT_CONFIG     advice.detachedHead=false    # Disable detached HEAD warning for fetching a specific tag
+    SOURCE_DIR     "${FETCHCONTENT_BASE_DIR}/LODEPNG"
+    SUBBUILD_DIR   "${FETCHCONTENT_BASE_DIR}/LODEPNG-Subbuild"
+    BINARY_DIR     "${FETCHCONTENT_BASE_DIR}/LODEPNG-Build")
+
+FetchContent_MakeAvailable(LODEPNG)
+
+set (TARGET_NAME ${PROJECT_NAME})
+
+
+
+
+add_executable(${TARGET_NAME}
+${lodepng_SOURCE_DIR}/lodepng.cpp)
+
+
+
+# Manually specify include directories and link the library
+target_include_directories(${TARGET_NAME} PRIVATE ${lodepng_SOURCE_DIR})
+
+
+add_subdirectory(sources)

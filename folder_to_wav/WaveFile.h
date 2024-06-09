@@ -2,7 +2,6 @@
 //  WaveFile.h
 //  byte_to_wav
 //
-//  Created by Zeno  Loesch on 15/11/22.
 //
 
 #ifndef WaveFile_h
