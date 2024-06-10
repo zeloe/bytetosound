@@ -1,34 +1,13 @@
 # bytetosound
  Reads raw data and outputs it as a wave file or image.
-## How to use
-
-### edit in .cpp files path to input and output 
-Just edit empty strings.
-
-## First
-> git submodule update --init --recursive
-
-
 ## How to build
-> g++ -std=c++17 -o outputfile  input.cpp 
-
-## How to build other_folder_to_color
->  g++ -std=c++17 -I../libs/lodepng -o image other_folder_to_color.cpp ../libs/lodepng/lodepng.cpp
-
-
-## Example
-
->  g++ -std=c++17 -o wavefilecreator folder_to_wav.cpp
-
-## "Best results" for getting glitches in audio 
-
-<img width="511" alt="1" src="https://user-images.githubusercontent.com/54742442/202549477-edb661c8-b818-4548-8e01-14e6c0f45ec9.png">
-<img width="510" alt="2" src="https://user-images.githubusercontent.com/54742442/202549488-6dc3e371-bbd2-4203-93e7-24e401ff0b08.png">
-<img width="513" alt="3" src="https://user-images.githubusercontent.com/54742442/202549489-43f29493-aa3d-45c9-8584-371f1ecde228.png">
-
-
-You can set bit rate in Wavefile.h to 1 and it is more likley to get this kind of image. \
-Remember to put it like to 8 that your DAW can import it. 
+```bash
+cmake . -B build
+cmake --build build --config Release
+```
+## How to use
+In terminal give path to input folder and path to output folder: \
+path/to/image/folder path/to/wave/folder
 
 
 ## Wavefile encoding
@@ -36,11 +15,9 @@ The code how to write a
 [WaveFile](https://gist.github.com/csukuangfj/c1d1d769606260d436f8674c30662450) .
 
 ## More about pixels
-[Pixelcode](https://www.scratchapixel.com/lessons/digital-imaging/simple-image-manipulations/reading-writing-images)
-
+[Pixelcode](https://www.scratchapixel.com/lessons/digital-imaging/simple-image-manipulations/reading-writing-images) \
+[LODEPNG](https://github.com/lvandeve/lodepng)
 ## The image i used
 ![kandinsky](https://user-images.githubusercontent.com/54742442/201990514-70c5f03b-bdf3-43c7-b27b-dcebbffe8c26.jpg)
 
-## To hear how it sounds 
-[soundcloud](https://soundcloud.com/zeno-l-sch/databending-001) \
- NOTE -> i used some reverbs find them on my github
+ 
