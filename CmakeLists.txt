@@ -26,18 +26,6 @@ FetchContent_Declare(LODEPNG
 
 FetchContent_MakeAvailable(LODEPNG)
 
-set (TARGET_NAME ${PROJECT_NAME})
-
-
-
-
-add_executable(${TARGET_NAME}
-${lodepng_SOURCE_DIR}/lodepng.cpp)
-
-
-
-# Manually specify include directories and link the library
-target_include_directories(${TARGET_NAME} PRIVATE ${lodepng_SOURCE_DIR})
 
 
 add_subdirectory(sources)
