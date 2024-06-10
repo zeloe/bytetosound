@@ -28,13 +28,13 @@ int main(int argc, const char * argv[]) {
     {
         std::string path_string = dir_entry.path().string();
         std::ifstream in(path_string, std::ifstream::binary);
-        std::cout << path_string << std::endl;
+       
     
     for (auto const& dir_entry : std::filesystem::recursive_directory_iterator{ path })
     {
         std::string path_string = dir_entry.path().string();
         std::ifstream in(path_string, std::ifstream::binary);
-
+        std::cout << path_string << std::endl;
         uint32_t fsize = in.tellg();
         in.seekg(0, std::ios::end);
         fsize = (uint32_t)in.tellg() - fsize;
